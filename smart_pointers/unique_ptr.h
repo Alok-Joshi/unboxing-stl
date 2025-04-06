@@ -17,12 +17,12 @@ class unique_ptr {
 
         //Constructors
         unique_ptr(): ptr(nullptr) {}
-
-        //Move Constructors
+        unique_ptr(T *ptr): ptr(ptr) {}
+        //Move Constructor
         unique_ptr(unique_ptr&& uptr): ptr(std::move(uptr.ptr)) {
             uptr.ptr = nullptr;
         }
-
+    //
         //operators
         unique_ptr& operator=(unique_ptr&& uptr) {
             //Release the ownership of current pointer and free it
@@ -35,8 +35,12 @@ class unique_ptr {
             return *this;
         }
 
-        T& operator*(const unique_ptr& uptr) {
+        T& operator*() {
             return *ptr;
+        }
+
+        T* operator->() {
+            return ptr;
         }
 
         //Destructor
