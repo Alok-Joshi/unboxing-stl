@@ -3,4 +3,3 @@ Experimental implementations of standard C++ STL data structures for learning an
 
 ## TODOs: 
 1. Add CMake for build
-2. Add shared_pointer implementation
