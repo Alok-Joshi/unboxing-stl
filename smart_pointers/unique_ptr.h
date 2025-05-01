@@ -63,6 +63,10 @@ class unique_ptr {
             this->delete_ptr(this->ptr);
             this->ptr = ptr;
         }
+    
+        //deleting copy methods
+        unique_ptr(unique_ptr& rhs) = delete;
+        unique_ptr& operator=(unique_ptr& rhs) = delete;
 };
 
 #endif
